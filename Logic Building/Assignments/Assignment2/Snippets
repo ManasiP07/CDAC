@@ -1,1 +1,451 @@
+Snippet 1 ->
+Error: Main method is not static in class Main, please define the main method as:
+   public static void main(String[] args)
+
+Snippet 2 ->
+1. First the program Compiled successfully.
+
+2. Shows Error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+
+Snippet 3->
+1. Shows Error: Main method must return a value of type void in class Main, please define the main method as:
+   public static void main(String[] args) 
+ 
+2. Why void is used in main method?
+- void does not return any value, as it do not have any return type.
+- It returns no return value when the program is successfully terminated.
+
+Snippet 4->
+1. Shows Error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+
+2. Why is String[] args needed?
+- args is the variable which is of type String array, used to run the main method.
+- String array doesn't have any elements in args variable.
+- It allows external data to be passed into the program when it starts, making it more versatile and adaptable to various inputs.
+
+Snippet 5->
+1. There is no any compile time/ Runtime error
+2. Output: Main method with String[] args
+3. Observation: 
+- There cannot be more than one main method in a class. 
+- If there is, 
+shows error: method main(String[]) is already defined in class Main
+
+Snippet 6->
+1. Throws compile time error: cannot find symbol
+        int x = y + 10; 
+
+2. Throws runtime error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args) 
+
+3. Why must variables be declared?
+- Variables must be declared before performing any operations on it, otherwise "cannot find symbol" error will be displayed
+
+Snippet 7->
+1. Throws compile time error:  error: incompatible types: String cannot be converted to int
+        int x = "Hello";
+
+2. Throws runtime error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args) 
+
+3. Why does Java enforce type safety?
+- Java supports the type safety where the error is seen at the compile time only.
+- It prevents assigning the value of one datatype to the other different datatype.
+- In above case, Type Safety in java prevents assigning the String datatype value to the int datatype value. 
+
+Snippet 8->
+1. A closing simple bracket ")" and ";" is needed after the ("Hello, World!"
+
+2. Throws compile time error: ')' or ',' expected System.out.println("Hello, World!"
+                                   ^
+
+Snippet 9->
+1.error: <identifier> expected
+        int class = 10;
+                 ^
+  error: illegal start of expression
+        System.out.println(class);
+                           ^
+  error: <identifier> expected 
+        System.out.println(class);
+
+2. Reserved keywords has a different meaning in java that's why it cannot be used as identifiers
+
+3. Keywords are also known as pre-defined identifiers reserved by Java for a specific purpose that inform compiler what to do.
+
+Snippet 10->
+1. It is compile time error: 
+error: non-static method display() cannot be referenced from a static context
+        display();
+        ^
+error: non-static method display(int) cannot be referenced from a static context
+        display(5);
+        ^
+2. After running the program:
+Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+
+3. Is method overloading allowed?:
+- Yes, Method overloading is allowed in Java, It requires the same method name but different signatures.
+- It is used to create multiple methods with same name and with different parameters.
+- We can use method overloading for to perform different operations/actions with same method name.
+
+Snippet 11->
+1. ArrayIndexOutOFBoundsException Index 5 out of bounds for length 3
+2. Array given is of size 3, and asked to display the value at index of 5. Given array doesn't have indexes more than 2.
+
+Snippet 12->
+1. While loop executes infinitely util true matches true.
+2. Conditions within any loop must have an exit point
+
+Snippet 13->
+1. Compiled successfully
+2. NullPointerException is thrown
+3. Any datatype which is assigned to null, it returns null value so that we cannot identify it's size. Hence the exception occurs.
+
+Snippet 14->
+1. We cannot assign String value to the double value
+2. Throws error: 
+incompatible types: String cannot be converted to double
+        double num = "Hello";
+                     ^
+3.Why does Java enforce data type constraints?:
+- We cannot assign value of one datatype to another different datatype, that is why Java supports type safety.
+
+Snippet 15->
+1. Here,  result(double)=num1(int)+num2(double)
+After compilation,
+ int result = num1 + num2; 
+it throws error: incompatible types: possible lossy conversion from double to int  
+2. To handle different datatypes in operations, type casting is used.
+
+Snippet 16->
+1. Output: 2.0
+2. 10/4 in double= 2.0
+3. Yes i surely expected an output in decimal format only.
+
+Snippet 17->
+1. Throws error in compile time, there is no "**" such operator in Java itself.
+2. error: illegal start of expression
+ int result = a ** b;
+                 ^
+1 error
+
+Snippet 18->
+1. Output:20
+2. Operators in any programming language follows BODMAS rule.
+
+Snippet 19->
+1. Compiled successfully.
+2. Throws exceptionat runtime: Exception in thread "main" java.lang.ArithmeticException: / by zero
+3. When we divide any value by zero, automatically throws divideByZero exception
+
+Snippet 20->
+1. Throws compile time error brcause the code itself contain a syntactical mistake.
+2. Error: ';' expected
+        System.out.println("Hello, World")  
+                                          ^ 
+
+3. Semicolons are the terminators in the statements. When we do not use ";" compiler gets confused when the statement started and where it ends.
+
+Snippet 21->
+1. Error occurred at compile time
+2.error: reached end of file while parsing
+}
+ ^
+
+Snippet 22->
+
+   1. illegal start of expression
+        static void displayMessage() {      
+        ^
+Aug21.java:188: error: class, interface, enum, or record expected
+}
+^
+2 errors
+** 2. Method inside another method is strictly not allowed in java, because it creates problem like scope hierarchy and confusion of which method is accessed first.
+
+Snippet 23->
+1. Output:
+Value is 2
+Value is 3
+Default case
+2. Default case print after "Value is 2" because there is no break statement given after case 2 also, after case 3.
+3. To prevent the program from executing the default case, you need to include at least one case value which matches the given value.
+
+Snippet 24->
+1.Output:
+Level 1
+Level 2
+Level 3
+Unknown level
+2. Because there is no break statement given after case 2 also, after case 3
+3. Break statement terminates any case or loop, if we do not include break statement it will not have termination
+
+Snippet 25->
+1. Throws error at compile time:
+error: constant label of type int is not compatible with switch selector type double
+            case 100:
+                 ^
+Aug21.java:233: error: constant label of type int is not compatible with switch selector type double
+            case 85:
+                 ^
+2. score is of double type but, values of case are of the type int
+3. Switch case doesn't allow double, float, long value
+4. Switch allows int, char, String, byte value
+
+Snippet 26->
+1. Compile time error: duplicate case label
+            case 5:
+            ^
+1 error
+
+c:\Users\manas\Desktop\CDAC Aug24>javac Aug21.java
+Aug21.java:249: error: duplicate case label
+            case 5:
+            ^
+1 error
+
+2. There cannot be a duplicate case value in a Switch statement, compiler gets confused which case to be terminated first.
+
+----------------------------------------------------------------------------
+SECTION - 2
+
+Q.1) import java.util.Scanner;
+
+public class Aug21_Q1 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the score:");
+        int score = sc.nextInt();
+
+        if (score >= 90 && score <= 100) {
+            System.out.println("A");
+
+        } else if (score >= 80 && score <= 89) {
+            System.out.println("B");
+        } else if (score >= 70 && score <= 79) {
+            System.out.println("C");
+        } else if (score >= 60 && score <= 69) {
+            System.out.println("D");
+        } else if (score >= 0 && score <= 59) {
+            System.out.println("F");
+
+        } else {
+            System.out.println("Score is invalid");
+        }
+
+    }
+
+}
+
+
+Q.2) public class Aug21_Q2 {
+    public static void main(String[] args) {
+        int day = 1;
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                switch (day) {
+                    case 1:
+                        System.out.println("It is a Weekday");
+                        break;
+                }
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                switch (day) {
+                    case 1:
+                        System.out.println("It is a Weekday");
+                        break;
+                }
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                switch (day) {
+                    case 1:
+                        System.out.println("It is a Weekday");
+                        break;
+                }
+                break;
+            case 4:
+                System.out.println("Thursday");
+                switch (day) {
+                    case 1:
+                        System.out.println("It is a Weekday");
+                        break;
+                }
+                break;
+            case 5:
+                System.out.println("Friday");
+                switch (day) {
+                    case 1:
+                        System.out.println("It is a Weekday");
+                        break;
+                }
+                break;
+            case 6:
+                System.out.println("Saturday");
+                switch (day) {
+                    case 1:
+                        System.out.println("It is a Weekend");
+                        break;
+                }
+                break;
+            case 7:
+                System.out.println("Sunday");
+                switch (day) {
+                    case 1:
+                        System.out.println("It is a Weekend");
+                        break;
+                }
+
+        }
+    }
+}
+
+
+
+Q.3) import java.util.Scanner;
+
+public class Aug21_Q3 {
+    public static void main(String[] args) {
+        int a, b;
+        String operation = "division";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the first number:");
+        a = sc.nextInt();
+        System.out.print("Enter the second number:");
+        b = sc.nextInt();
+        switch (operation) {
+
+            case "addition":
+                System.out.println("Addition is" + (a + b));
+                break;
+
+            case "substraction":
+                System.out.println("Substraction is" + (a - b));
+                break;
+
+            case "multiplication":
+                System.out.println("Multiplication is" + (a * b));
+                break;
+
+            case "division":
+                if (b == 0) {
+                    System.out.println("Error: Divide by zero is not allowed!");
+                } else {
+                    System.out.println("Dividation is" + (a / b));
+
+                }
+                break;
+
+            case "modulation":
+                System.out.println("Modulation is" + (a % b));
+                break;
+            default:
+                System.out.println("Invalid request!");
+                break;
+
+        }
+        sc.close();
+    }
+}
+
+Q.4) import java.util.Scanner;
+
+public class Aug21_Q4 {
+    public static void main(String[] args) {
+        double totalPurchase;
+        boolean membershipCard = false;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter total purchase");
+        totalPurchase = sc.nextInt();
+        membershipCard = true;
+        if (totalPurchase >= 1000) {
+
+            if (membershipCard == true) {
+                System.out.println("20% + Increase discount by 5%");
+                totalPurchase = totalPurchase - (0.25 * totalPurchase);
+                System.out.println("After 25% discount:" + totalPurchase);
+
+            } else {
+                System.out.println("apply a 20% discount");
+                totalPurchase = totalPurchase - (0.2 * totalPurchase);
+                System.out.println("After 20% discount:" + totalPurchase);
+            }
+
+        } else if (totalPurchase >= 500 && totalPurchase <= 999) {
+            if (membershipCard == true) {
+                System.out.println("10% + Increase discount by 5%");
+                totalPurchase = totalPurchase - (0.15 * totalPurchase);
+                System.out.println("After 15% discount:" + totalPurchase);
+
+            } else {
+                System.out.println("apply a 10% discount");
+                totalPurchase = totalPurchase - (0.1 * totalPurchase);
+                System.out.println("After 10% discount:" + totalPurchase);
+            }
+
+        } else if (totalPurchase <= 500) {
+            if (membershipCard == true) {
+                System.out.println("5% + Increase discount by 5%");
+                totalPurchase = totalPurchase - (0.1 * totalPurchase);
+                System.out.println("After 10% discount:" + totalPurchase);
+
+            } else {
+                System.out.println("apply a 5% discount");
+                totalPurchase = totalPurchase - (0.5 * totalPurchase);
+                System.out.println("After 50% discount:" + totalPurchase);
+            }
+
+        } else {
+            System.out.println("Invalid total purchase");
+        }
+        sc.close();
+    }
+}
+
+Q.5) public class Aug21_Q5 {
+     public static void main(String[] args) {
+        int sub1 = 45, sub2 = 21, sub3 = 15, failcount = 0;
+        String result;
+        if (sub1 >= 40 && sub2 >= 40 && sub3 >= 40){
+            result = "pass";
+        }
+        else{
+            result = "fail";
+        }
+        switch (result){
+            case "pass":
+                System.out.println("Student has passed all 3 subjects.");
+                break;
+            case "fail":
+                if (sub1 < 40) {
+                    failcount++;
+                }
+                if (sub2 < 40) {
+                    failcount++;
+                }
+                if (sub3 < 40) {
+                    failcount++;
+                }
+                switch (failcount) {
+                    case 1:
+                        System.out.println("Student has failed in 1 subject.");
+                        break;
+                    case 2:
+                        System.out.println("Student has failed in 2 subjects.");
+                        break;
+                    case 3:
+                        System.out.println("Student has failed in 3 subjects.");
+                        break;
+                }
+                break;
+        }
+    }
+}
 
