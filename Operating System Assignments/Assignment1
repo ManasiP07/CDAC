@@ -1,1 +1,255 @@
+Problem 1:
 
+a) Navigate and List:
+Start by navigating to your home directory and list its contents:
+
+cdac@LAPTOP-39EV3JI7:~$ pwd
+/home/cdac
+cdac@LAPTOP-39EV3JI7:~$ ls
+ClassPractice  Day-1  abc.txt  file1.txt  file2.txt  file3.txt  xyz.txt
+
+Then, move into a directory named "LinuxAssignment" if it exists; otherwise, create it:
+
+cdac@LAPTOP-39EV3JI7:~$ if [ -d "LinuxAssignment" ]; then echo 'Exists'; else echo 'Not found'; fi
+Not found
+
+cdac@LAPTOP-39EV3JI7:~$ mkdir LinuxAssignment
+cdac@LAPTOP-39EV3JI7:~$ mv ClassPractice/* LinuxAssignment/
+cdac@LAPTOP-39EV3JI7:~$ cd LinuxAssignment
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls
+file1.txt  file2.txt  file3.txt
+
+b) File Management:
+Inside the "LinuxAssignment" directory, create a new file named "file1.txt":
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ nano file1.txt
+
+Display its contents:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ cat file1.txt
+Hi
+
+c) Directory Management:
+Create a new directory named "docs" inside the "LinuxAssignment" directory:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ mkdir docs
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls
+docs  file1.txt  file2.txt  file3.txt
+
+d) Copy and Move Files:
+Copy the "file1.txt" file into the "docs" directory:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ cp file1.txt docs
+
+Rename it to "file2.txt": 
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ mv file1.txt file2.txt
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls
+docs  file2.txt  file3.txt
+
+e) Permissions and Ownership:
+Change the permissions of "file2.txt" to allow read, write, and execute permissions for the owner: 
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ chmod u+r+w+x file2.txt
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls -l
+total 8
+drwxr-xr-x 2 cdac cdac 4096 Aug 28 19:42 docs
+-rwxr--rwx 1 cdac cdac    3 Aug 28 19:30 file2.txt
+-rw-r--r-x 1 cdac cdac    0 Aug 28 00:29 file3.txt
+
+Only read permissions for others:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ chmod o-w-x file2.txt
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls -l
+total 8
+drwxr-xr-x 2 cdac cdac 4096 Aug 28 19:42 docs
+-rwxr--r-- 1 cdac cdac    3 Aug 28 19:30 file2.txt
+-rw-r--r-x 1 cdac cdac    0 Aug 28 00:29 file3.txt
+
+Change the owner of "file2.txt" to the current user:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ sudo chown $(whoami) file2.txt
+[sudo] password for cdac:
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ pwd
+/home/cdac/LinuxAssignment
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls
+docs  file2.txt  file3.txt
+
+f) Final Checklist:
+Finally, list the contents of the "LinuxAssignment" directory:
+ 
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls -l
+total 8
+drwxr-xr-x 2 cdac cdac 4096 Aug 28 19:42 docs
+-rwxr--r-- 1 cdac cdac    3 Aug 28 19:30 file2.txt
+-rw-r--r-x 1 cdac cdac    0 Aug 28 00:29 file3.txt
+
+And the root directory to 
+ensure that all operations were performed correctly:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ cd /
+cdac@LAPTOP-39EV3JI7:/$ ls
+bin   dev  home  lib    lib64   lost+found  mnt  proc  run   snap  sys  usr
+boot  etc  init  lib32  libx32  media       opt  root  sbin  srv   tmp  var
+
+g) File Searching:
+
+a. Search for all files with the extension ".txt" in the current directory and its subdirectories.
+
+cdac@LAPTOP-39EV3JI7:~$ cd LinuxAssignment
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ find . -name "*.txt"
+./file2.txt
+./file3.txt
+./docs/file1.txt
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ls
+docs  file2.txt  file3.txt
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ cd docs
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ find . -name "*.txt"
+./file1.txt
+ 
+b. Display lines containing a specific word in a file (provide a file name and the specific word to search). 
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ grep "Hi" file2.txt
+Hi
+
+h) System Information:
+Display the current system date and time:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ date
+Wed Aug 28 22:54:17 IST 2024
+
+i) Networking:
+a. Display the IP address of the system:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:09:e1:5a brd ff:ff:ff:ff:ff:ff
+    inet 172.17.58.16/20 brd 172.17.63.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe09:e15a/64 scope link
+       valid_lft forever preferred_lft forever
+
+b. Ping a remote server to check connectivity (provide a remote server address to ping): 
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=37.3 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=12.8 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=10.8 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=117 time=10.9 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=117 time=11.4 ms
+^C
+--- 8.8.8.8 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 10.773/16.625/37.325/10.374 ms
+
+j) File Compression:
+a. Compress the "docs" directory into a zip file:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ zip -r docs.zip docs
+  adding: docs/ (stored 0%)
+  adding: docs/file1.txt (stored 0%)
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$
+
+ 
+b. Extract the contents of the zip file into a new directory.
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment$ unzip docs.zip -d zipFolder
+Archive:  docs.zip
+   creating: zipFolder/docs/
+ extracting: zipFolder/docs/file1.txt
+
+
+k) File Editing:
+a. Open the "file1.txt" file in a text editor and add some text to it:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ cat file1.txt
+Hi
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ nano file1.txt
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ cat file1.txt
+Hey there, I'm using Ubuntu!
+ 
+b. Replace a specific word in the "file1.txt" file with another word (provide the original word and the word to replace it with): 
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ cat file1.txt
+Hey there, I'm using Ubuntu!
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ sed -i 's/Hey/Hi/g' file1.txt
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ cat file1.txt
+Hi there, I'm using Ubuntu!
+_______________________________________________________________________________________________________________________________
+Problem 2:
+a. Suppose you have a file named "data.txt" containing important information. Display the first 10 lines of this file to quickly glance at its contents using a command:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ nano data.txt
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ head -10 data.txt
+Hi
+Hello
+How
+Are
+You
+?
+Doing
+Good
+Thank
+You
+
+b. Now, to check the end of the file for any recent additions,
+display the last 5 lines of "data.txt" using another command. 
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ tail -5 data.txt
+You
+Mention
+Not
+Bye
+Goodbye
+
+c. In a file named "numbers.txt," there are a series of numbers. Display the first 15 lines of this file to analyze the initial data set:
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ nano numbers.txt
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ cat numbers.txt
+12
+54
+8
+56
+09
+23
+225
+76
+90
+37
+61
+83
+97
+49
+54
+89
+3
+9
+2
+5
+0
+8
+65
+4
+33
+
+d. To focus on the last few numbers of the dataset, display the last 3 lines of "numbers.txt":
+
+cdac@LAPTOP-39EV3JI7:~/LinuxAssignment/docs$ tail -3 numbers.txt
+4
+33
+21
+
+e. Imagine you have a file named "input.txt" with text content. Use a command to translate all lowercase letters to uppercase in "input.txt" and save the modified text in a new file named "output.txt."
