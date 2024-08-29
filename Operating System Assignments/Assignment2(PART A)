@@ -1,1 +1,73 @@
+What will the following commands do? 
+• echo "Hello, World!" : 
+echo command is used to print a string, this line will show the output as:
+Hello, World!
+
+ • name="Productive"  :
+Initialize the name variable to “Productive” in a script.
+
+• touch file.txt  :
+The touch command will simple create a new file called as file.txt
+Command: touch fileName
+
+• ls -a :
+This command will show all the files including the hidden files which starts with “.” .
+
+• rm file.txt  :
+This command will remove/ delete the file.txt permanently.
+Command: rm fileName
+
+• cp file1.txt file2.txt :
+This command will simply copy the contents of file1.txt into file2.txt. 
+Command: cp sourceFile destinationFile
+
+ • mv file.txt /path/to/directory/
+This command will move the file.txt to the another directory.
+Command: mv sourceFile destinationFile
+
+ • chmod 755 script.sh :
+Allows owner full permissions of read, write and execute.
+
+ • grep "pattern" file.txt :
+This command highlights the word “pattern” in file.txt
+Command: grep “patternToBeSearch” fileName
+
+• kill PID :
+Used to kill a process with the specific PID.
+
+• mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt :
+This command will make new directory “mydir” then changes the current working directory to mydir. After that it creates a new file “file.txt” and stores “Hello, World!” inside it. Then “Hello, World!” will be displayed on the screen.
+
+• ls -l | grep ".txt" :
+Here, “|” is the pipe operator.
+Basically, ls -l command is used to show detailed list of files in current directory, grep command is used to match the patterns in a file.
+The above command shows the detailed info about current directory and shows the file which has extension as “.txt”.
+
+• cat file1.txt file2.txt | sort | uniq :
+Basically, “cat file1.txt file2.txt” concatenates the content in file1.txt and file2.txt. Then sorting of both contents of file is done in alphabetical order.
+By “uniq” command, duplicates in file1.txt and file2.txt are removed.
+
+• ls -l | grep "^d" :
+The “ls -l” command shows the detail info about a directory then grep "^d" command shows the files which starts with the letter”d”.
+
+• grep -r "pattern" /path/to/directory/ :
+It shows the files, directories which has the “pattern” word matching within the existing directory.
+
+• cat file1.txt file2.txt | sort | uniq –d :
+At first “cat file1.txt file2.txt” concatenates contents from file1.txt and file2.txt. Sorts the content by alphabetical or numerical order. Then shows the duplicate contents in file1.txt and file2.txt.
+
+• chmod 644 file.txt : 
+Allows owner a read, write permission. All others read permission only.
+
+• cp -r source_directory destination_directory:
+This command copies the directories from source_directory to destination_directory, recursively.
+
+• find /path/to/search -name "*.txt" :
+This command search the name of files which has “.txt” extension in a directory.
+
+• chmod u+x file.txt :
+Gives the executable permission to the owner of “file.txt”.
+
+• echo $PATH :
+Shows the value of PATH variable.
 
